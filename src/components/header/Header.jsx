@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"; // Importa Link de react-router-dom
 import styles from "./Header.module.css";
 import Logo from "../logo/Logo";
 import Button from "../button/Button";
@@ -13,7 +14,9 @@ export default function Header() {
         <Navbar />
       </nav>
       <div className={styles.buttons}>
-        <Button label="Log In" />
+        <Link to="/log-in">
+          <Button label="Log In" />
+        </Link>
       </div>
     </header>
   );

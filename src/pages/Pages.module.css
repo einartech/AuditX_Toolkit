@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --primary-color: #000000;
+    /* Negro puro */
+    --secondary-color: #1a1a1a;
+    /* Gris oscuro */
+    --tertiary-color: #333333;
+    /* Gris intermedio */
+    --cuaternary-color: #f2f2f2;
+    /* Gris claro */
+    --quinary-color: #ffffff;
+    /* Blanco puro */
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: var(--secondary-color);
+    /* Fondo gris oscuro */
+    color: var(--quinary-color);
+    /* Texto blanco */
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+    color: var(--primary-color);
+    /* Texto negro */
+}
+
+button {
+    background-color: var(--tertiary-color);
+    /* Fondo gris intermedio */
+    color: var(--quinary-color);
+    /* Texto blanco */
+    border: none;
+    padding: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--cuaternary-color);
+    /* Fondo gris claro */
+    color: var(--primary-color);
+    /* Texto negro */
+}

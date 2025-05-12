@@ -1,0 +1,14 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    margin-top: 100px;
+    /* Espacio debajo del Header */
+    margin-bottom: 100px;
+    /* Espacio encima del Footer */
+    background-color: var(--secondary-color);
+    color: var(--quinary-color);
+    min-height: calc(100vh - 160px);
+    /* Ajusta según el tamaño del Header y Footer */
+}

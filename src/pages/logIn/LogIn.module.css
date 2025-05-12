@@ -1,0 +1,136 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* Ocupa toda la altura de la ventana */
+    background-color: var(--secondary-color);
+    color: var(--quinary-color);
+    margin: 0;
+    padding: 1rem;
+    /* Asegura espacio en dispositivos pequeños */
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    /* Ancho máximo del formulario */
+    background-color: var(--quinary-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid var(--tertiary-color);
+    border-radius: 4px;
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--cuaternary-color);
+    box-shadow: 0 0 4px var(--cuaternary-color);
+}
+
+.submitButton {
+    padding: 0.8rem;
+    font-size: 1rem;
+    background-color: var(--tertiary-color);
+    color: var(--quinary-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+    background-color: var(--cuaternary-color);
+}
+
+.register {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.registerButton {
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+    background-color: var(--tertiary-color);
+    color: var(--quinary-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.registerButton:hover {
+    background-color: var(--cuaternary-color);
+}
+
+/* Media queries for responsiveness */
+
+/* Tablets (768px and up) */
+@media (min-width: 768px) {
+    .form {
+        padding: 2.5rem;
+        max-width: 500px;
+        /* Aumenta el ancho en tablets */
+    }
+
+    .title {
+        font-size: 2.5rem;
+        /* Título más grande en tablets */
+    }
+
+    .submitButton,
+    .registerButton {
+        font-size: 1.1rem;
+        /* Botones ligeramente más grandes */
+    }
+}
+
+/* Desktops (1024px and up) */
+@media (min-width: 1024px) {
+    .form {
+        padding: 3rem;
+        max-width: 600px;
+        /* Aumenta el ancho en desktops */
+    }
+
+    .title {
+        font-size: 3rem;
+        /* Título más grande en desktops */
+    }
+
+    .submitButton,
+    .registerButton {
+        font-size: 1.2rem;
+        /* Botones más grandes */
+    }
+}
