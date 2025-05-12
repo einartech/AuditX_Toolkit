@@ -1,4 +1,4 @@
-import style from "./Style.module.css";
+import style from "./Picture.module.css";
 
 export default function Picture({ img, alt, width, height }) {
   return (
