@@ -4,9 +4,8 @@ import NavLink from "../navlink/Navlink";
 export default function Navbar() {
   return (
     <ul className={styles.navbar}>
-      <NavLink to="/home" label="Home" />
-      <NavLink to="/about" label="About" />
-      <NavLink to="/contact" label="Contact" />
+      <NavLink to="/auditxtoolkit" label="AuditX Toolkit" />
+      <NavLink to="/about-the-project" label="About the project" />
     </ul>
   );
 }

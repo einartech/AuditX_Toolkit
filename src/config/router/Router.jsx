@@ -7,6 +7,8 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/auditxtoolkit" element={<App />} />
+        <Route path="/about-the-project" element={<App />} />
       </Routes>
     </BrowserRouter>
   );

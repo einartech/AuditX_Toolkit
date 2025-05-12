@@ -1,0 +1,19 @@
+.content {
+    flex: 1;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--quinary-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--quinary-color);
+}
+
+.body {
+    font-size: 1rem;
+    line-height: 1.5;
+}
