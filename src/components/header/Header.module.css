@@ -1,0 +1,100 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    /* Permite que los elementos se ajusten automáticamente */
+}
+
+.logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    max-width: 150px;
+    overflow: hidden;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.navbar {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    /* Permite que los enlaces se ajusten en pantallas pequeñas */
+}
+
+.buttons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    /* Permite que los botones se ajusten en pantallas pequeñas */
+}
+
+.buttons button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        justify-content: flex-start;
+        gap: 0.5rem;
+        /* Reduce el espacio entre los enlaces */
+    }
+
+    .buttons {
+        justify-content: flex-end;
+        gap: 0.5rem;
+    }
+
+    .buttons button {
+        padding: 0.4rem 0.8rem;
+        /* Reduce el tamaño de los botones */
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center;
+        /* Centra el navbar en pantallas pequeñas */
+        gap: 0.5rem;
+    }
+
+    .buttons {
+        justify-content: center;
+        /* Centra los botones en pantallas pequeñas */
+        gap: 0.5rem;
+    }
+
+    .buttons button {
+        padding: 0.3rem 0.6rem;
+        /* Reduce aún más el tamaño de los botones */
+        font-size: 0.8rem;
+    }
+}

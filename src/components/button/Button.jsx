@@ -1,9 +1,5 @@
 import styles from "./Button.module.css";
 
-export default function Button() {
-  return (
-    <>
-      <h2 className={styles.yellowTitle}>SOY EL SUB-COMPONENTE BUTTON</h2>
-    </>
-  );
+export default function Button({ label = "Click Me" }) {
+  return <button className={styles.button}>{label}</button>;
 }

@@ -1,9 +1,12 @@
 import styles from "./Navbar.module.css";
+import NavLink from "./NavLink";
 
 export default function Navbar() {
   return (
-    <>
-      <h2 className={styles.yellowTitle}>SOY EL SUB-COMPONENTE NAVBAR</h2>
-    </>
+    <ul className={styles.navbar}>
+      <NavLink to="/home" label="Home" />
+      <NavLink to="/about" label="About" />
+      <NavLink to="/contact" label="Contact" />
+    </ul>
   );
 }

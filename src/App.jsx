@@ -6,8 +6,6 @@ import Footer from "./components/footer/Footer";
 export default function App() {
   return (
     <>
-      <h1>PICTURE COMPONENT</h1>
-
       <Header />
       <Main />
       <Footer />

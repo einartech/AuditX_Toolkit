@@ -1,9 +1,10 @@
 import styles from "./Logo.module.css";
+import logoImage from "../../assets/images/react.svg"; // Importa la imagen del logo
 
 export default function Logo() {
   return (
-    <>
-      <h2 className={styles.yellowTitle}>SOY EL SUB-COMPONENTE LOGO</h2>
-    </>
+    <div className={styles.logo}>
+      <img src={logoImage} alt="Logo" className={styles.logoImage} />
+    </div>
   );
 }

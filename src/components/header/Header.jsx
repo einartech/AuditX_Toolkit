@@ -1,15 +1,20 @@
 import styles from "./Header.module.css";
 import Logo from "../logo/Logo";
-import Navbar from "../navbar/Navbar";
 import Button from "../button/Button";
+import Navbar from "../navbar/Navbar";
 
 export default function Header() {
   return (
-    <header>
-      <h1 className={styles.greenTitle}>SOY EL COMPONENTE HEADER</h1>
-      <Logo />
-      <Navbar />
-      <Button />
+    <header className={styles.header}>
+      <div className={styles.logo}>
+        <Logo />
+      </div>
+      <nav className={styles.navbar}>
+        <Navbar />
+      </nav>
+      <div className={styles.buttons}>
+        <Button label="Log In" />
+      </div>
     </header>
   );
 }

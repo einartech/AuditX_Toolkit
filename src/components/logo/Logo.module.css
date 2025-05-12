@@ -1,15 +1,14 @@
-.redTitle {
-    color: red;
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.blueTitle {
-    color: blue;
-}
-
-.greenTitle {
-    color: green;
-}
-
-.yellowTitle {
-    color: yellow;
+.logoImage {
+    width: 50px;
+    /* Tamaño estándar del logo */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    max-width: 100%;
+    /* Asegura que no se desborde en contenedores pequeños */
 }
