@@ -1,5 +1,5 @@
 import styles from "./Navbar.module.css";
-import NavLink from "./NavLink";
+import NavLink from "../navlink/Navlink";
 
 export default function Navbar() {
   return (

@@ -1,0 +1,16 @@
+.symbols {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.symbols a {
+    color: var(--quinary-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.symbols a:hover {
+    color: var(--tertiary-color);
+}
