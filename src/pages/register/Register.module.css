@@ -3,14 +3,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    /* Ajusta estos valores según la altura real de tu header y footer */
+    min-height: calc(100vh - 120px - 80px);
+    /* Ejemplo: header 120px, footer 80px */
+    margin-top: 80px;
+    /* 120px x 3 */
+    /* Espacio para el header fijo */
+    margin-bottom: 80px;
+    /* Espacio para el footer fijo */
     background: linear-gradient(135deg, var(--secondary-color) 60%, var(--primary-color) 100%);
     color: var(--quinary-color);
-    margin: 0;
     padding: 1rem;
+    box-sizing: border-box;
 }
 
 .title {
+    grid-column: 1 / -1;
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
     color: var(--primary-color);
@@ -20,16 +28,18 @@
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem 2rem;
     width: 100%;
-    max-width: 400px;
-    background: rgba(255, 255, 255, 0.95);
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.97);
     padding: 2.5rem 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
     backdrop-filter: blur(2px);
+    box-sizing: border-box;
+    align-items: start;
 }
 
 .formGroup {
@@ -42,16 +52,21 @@ label {
     font-size: 1rem;
     color: var(--primary-color);
     font-weight: 500;
+    margin-bottom: 0.2rem;
 }
 
 input {
+    width: 100%;
+    /* Ocupa todo el ancho del div padre */
+    box-sizing: border-box;
+    /* Incluye padding y border en el ancho */
     padding: 0.9rem;
     font-size: 1rem;
     border: 1.5px solid var(--tertiary-color);
     border-radius: 6px;
     outline: none;
     background: #f7f7f7;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 input:focus {
@@ -59,8 +74,16 @@ input:focus {
     box-shadow: 0 0 6px var(--cuaternary-color);
 }
 
+select,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .submitButton {
-    padding: 0.9rem;
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+    padding: 0.95rem;
     font-size: 1.1rem;
     background: linear-gradient(90deg, var(--tertiary-color) 60%, var(--secondary-color) 100%);
     color: var(--quinary-color);
@@ -80,6 +103,7 @@ input:focus {
 }
 
 .register {
+    grid-column: 1 / -1;
     margin-top: 1.5rem;
     text-align: center;
     color: var(--primary-color);
@@ -100,51 +124,101 @@ input:focus {
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .form {
-        padding: 1.5rem 0.5rem;
         max-width: 95vw;
+        padding: 2rem 1rem;
     }
 
-    .title {
-        font-size: 1.5rem;
+    .main {
+        margin-top: 80px;
+        /* 100px x 3 */
+        margin-bottom: 60px;
+        min-height: calc(100vh - 100px - 60px);
     }
 }
 
-/* Tablets (768px and up) */
+@media (max-width: 700px) {
+    .form {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 99vw;
+        padding: 1.2rem 0.3rem;
+        border-radius: 12px;
+    }
+
+    .title,
+    .submitButton,
+    .register {
+        grid-column: 1 / 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .main {
+        margin-top: 330px;
+        /* 110px x 3 */
+        /* Más espacio para el header fijo */
+        margin-bottom: 60px;
+        /* Más espacio para el footer fijo */
+        min-height: calc(100vh - 110px - 60px);
+        padding: 0.5rem;
+    }
+
+    .form {
+        padding: 1rem 0.2rem;
+        max-width: 99vw;
+        border-radius: 10px;
+        gap: 1.2rem;
+    }
+
+    .title {
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .formGroup {
+        gap: 0.7rem;
+    }
+
+    .submitButton {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .register {
+        margin-top: 2rem;
+        /* Más espacio respecto al botón */
+        font-size: 0.98rem;
+    }
+}
+
 @media (min-width: 768px) {
     .form {
         padding: 2.5rem;
         max-width: 500px;
-        /* Aumenta el ancho en tablets */
     }
 
     .title {
         font-size: 2.5rem;
-        /* Título más grande en tablets */
     }
 
     .submitButton {
         font-size: 1.2rem;
-        /* Botones ligeramente más grandes */
     }
 }
 
-/* Desktops (1024px and up) */
 @media (min-width: 1024px) {
     .form {
         padding: 3rem;
         max-width: 600px;
-        /* Aumenta el ancho en desktops */
     }
 
     .title {
         font-size: 3rem;
-        /* Título más grande en desktops */
     }
 
     .submitButton {
         font-size: 1.3rem;
-        /* Botones más grandes */
     }
 }

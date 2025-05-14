@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import { Link } from "react-router-dom";
 import styles from "./LogIn.module.css";
 
 export default function LogIn() {
@@ -11,7 +12,7 @@ export default function LogIn() {
     e.preventDefault();
     console.log("Email:", email);
     console.log("Password:", password);
-    // Aquí puedes manejar el envío del formulario, como llamar a una API
+    // Here you can handle form submission, such as calling an API
   };
 
   return (
@@ -19,7 +20,7 @@ export default function LogIn() {
       <Header />
       <main className={styles.main}>
         <form onSubmit={handleSubmit} className={styles.form}>
-          <h1 className={styles.title}>INICIAR SESIÓN</h1>
+          <h1 className={styles.title}>Sign In</h1>
           <div className={styles.formGroup}>
             <label htmlFor="email">Email</label>
             <input
@@ -43,11 +44,13 @@ export default function LogIn() {
             />
           </div>
           <button type="submit" className={styles.submitButton}>
-            Log In
+            Sign In
           </button>
           <div className={styles.register}>
-            <p>¿No tienes cuenta? Puedes crear una:</p>
-            <button className={styles.registerButton}>Regístrate</button>
+            <span>Don't have an account?</span>
+            <Link to="/register" className={styles.registerLink}>
+              Register
+            </Link>
           </div>
         </form>
       </main>
