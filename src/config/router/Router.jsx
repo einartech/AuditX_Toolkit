@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React from "react";
 import styles from "../../pages/Pages.module.css";
-import Home from "../../pages/home/Home";
+import Reports from "../../pages/reports/Reports";
 import About from "../../pages/about/About";
 import AuditxToolkit from "../../pages/auditxToolkit/auditxToolkit";
 import Login from "../../pages/logIn/LogIn";
@@ -10,7 +10,7 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/my-reports" element={<Reports />} />
         <Route path="/about" element={<About />} />
         <Route path="/log-in" element={<Login />} />
         <Route path="/register" element={<Register />} />

@@ -11,7 +11,7 @@ export default function Navbar() {
       {isAuthenticated && (
         <>
           <NavLink to="/audit-x-toolkit" label="Audit X Toolkit" />
-          <NavLink to="/home" label="Home" />
+          <NavLink to="/my-reports" label="My Reports" />
           {/* Puedes añadir más enlaces aquí */}
         </>
       )}
