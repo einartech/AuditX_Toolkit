@@ -60,6 +60,12 @@
     background-color: var(--cuaternary-color);
 }
 
+.userInfo {
+    margin-right: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
 @media (max-width: 1024px) {
     .navbar {
         justify-content: flex-start;

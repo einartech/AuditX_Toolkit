@@ -5,9 +5,11 @@ import Button from "../button/Button";
 import Navbar from "../navbar/Navbar";
 import { useAuth } from "../../hooks/useAuth";
 import { AuthService } from "../../api/authService";
+import { useUser } from "../../hooks/useUser";
 
 export default function Header() {
   const isAuthenticated = useAuth();
+  const user = useUser();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -24,6 +26,13 @@ export default function Header() {
       <nav className={styles.navbar}>
         <Navbar />
       </nav>
+      <div className={styles.userInfo}>
+        {isAuthenticated && user && (
+          <span>
+            {user.name} {user.surname} ({user.pronouns})
+          </span>
+        )}
+      </div>
       <div className={styles.buttons}>
         {!isAuthenticated && (
           <Link to="/log-in">
