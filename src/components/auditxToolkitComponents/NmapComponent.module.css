@@ -49,16 +49,66 @@
 }
 
 .resultContainer {
-    background: var(--background-result, #626262);
-    border: 1px solid var(--border-color, #e2e8f0);
+    background: var(--background-result, #222);
     border-radius: 8px;
-    padding: 1rem;
+    padding: 1rem 1rem 3.5rem 1rem;
     max-height: 320px;
     overflow: auto;
     font-size: 0.95rem;
     font-family: "Fira Mono", "Consolas", monospace;
     white-space: pre-wrap;
     word-break: break-all;
+    color: var(--text-black, #fff);
+    position: relative;
+}
+
+.resultPre {
+    color: var(--text-black, #fff);
+    margin: 0 0 1.5rem 0;
+    font-size: clamp(0.8rem, 1vw, 1.1rem);
+    line-height: 1.4;
+}
+
+.buttonRow {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.saveButton {
+    padding: 0.7rem 1.3rem;
+    background: #2b6cb0;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    transition: background 0.2s;
+}
+
+.saveButton:disabled {
+    background: var(--secondary-color, #b2b2b2);
+    cursor: not-allowed;
+}
+
+.discardButton {
+    padding: 0.7rem 1.3rem;
+    background: #e53e3e;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.discardButton:disabled {
+    background: #fbb6b6;
+    cursor: not-allowed;
 }
 
 @media (max-width: 800px) {
@@ -82,5 +132,12 @@
     .resultContainer {
         max-height: 120px;
         font-size: 0.85rem;
+    }
+
+    .saveButton {
+        bottom: 0.7rem;
+        right: 0.7rem;
+        font-size: 0.95rem;
+        padding: 0.5rem 1rem;
     }
 }

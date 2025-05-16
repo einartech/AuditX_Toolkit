@@ -171,3 +171,94 @@
         font-size: 0.9rem;
     }
 }
+
+.trashIcon {
+    display: flex;
+    align-items: center;
+    margin-left: 0.7rem;
+    transition: opacity 0.2s;
+}
+
+.trashIcon:hover svg {
+    color: var(--danger-color, #c53030);
+    opacity: 0.8;
+}
+
+.confirmModalOverlay {
+    position: fixed;
+    z-index: 3000;
+    inset: 0;
+    background: rgba(30, 41, 59, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+}
+
+.confirmModal {
+    background: var(--background-secondary, #fff);
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    max-width: 350px;
+    width: 92vw;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    text-align: center;
+    animation: popIn 0.18s cubic-bezier(.68, -0.55, .27, 1.55);
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.confirmModal h3 {
+    margin-bottom: 0.7rem;
+    color: var(--primary-color, #2b6cb0);
+    font-size: 1.25rem;
+}
+
+.confirmModalButtons {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 1.2rem;
+}
+
+.cancelButton,
+.deleteButton {
+    padding: 0.6rem 1.3rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.cancelButton {
+    background: var(--background-result, #f7fafc);
+    color: var(--primary-color, #2b6cb0);
+    border: 1px solid var(--primary-color, #2b6cb0);
+}
+
+.cancelButton:hover {
+    background: #e2e8f0;
+}
+
+.deleteButton {
+    background: var(--danger-color, #e53e3e);
+    color: #fff;
+}
+
+.deleteButton:disabled {
+    background: #fbb6b6;
+    color: #fff;
+    cursor: not-allowed;
+}

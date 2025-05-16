@@ -4,6 +4,7 @@ import { useUser } from "../../hooks/useUser";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import styles from "./Reports.module.css";
+import { FaTrashAlt } from "react-icons/fa";
 
 export default function MyReports() {
   const user = useUser();
@@ -11,6 +12,8 @@ export default function MyReports() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [selectedReport, setSelectedReport] = useState(null);
+  const [deletingId, setDeletingId] = useState(null);
+  const [confirmDelete, setConfirmDelete] = useState(null); // Nuevo estado
 
   useEffect(() => {
     if (!user?.id) {
@@ -33,13 +36,26 @@ export default function MyReports() {
     fetchReports();
   }, [user]);
 
+  const handleDelete = async (report) => {
+    setDeletingId(report.id);
+    try {
+      await ReportService.deleteReport(report.id);
+      setReports((prev) => prev.filter((r) => r.id !== report.id));
+    } catch {
+      alert("Failed to delete report.");
+    } finally {
+      setDeletingId(null);
+      setConfirmDelete(null);
+    }
+  };
+
   return (
     <>
       <Header />
       <div className={styles.reportsContainer}>
         <h2>
           {user
-            ? `${user.name} ${user.surname} Cybersecurity Reports`
+            ? `Resultado ${user.name} ${user.surname} Cybersecurity Audits`
             : "My Cybersecurity Audits"}
         </h2>
         {loading && <div>Loading...</div>}
@@ -49,8 +65,11 @@ export default function MyReports() {
             <div
               key={report.id}
               className={styles.reportCard}
-              onClick={() => setSelectedReport(report)}
-              style={{ cursor: "pointer" }}
+              onClick={(e) => {
+                if (e.target.closest(`.${styles.trashIcon}`)) return;
+                setSelectedReport(report);
+              }}
+              style={{ cursor: "pointer", position: "relative" }}
               title="View full report"
             >
               <div className={styles.reportHeader}>
@@ -59,6 +78,24 @@ export default function MyReports() {
                   {report.createdAt
                     ? new Date(report.createdAt).toLocaleString()
                     : ""}
+                </span>
+                <span
+                  className={styles.trashIcon}
+                  title="Delete report"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setConfirmDelete(report); // Muestra el modal
+                  }}
+                  style={{ marginLeft: "1rem", cursor: "pointer" }}
+                >
+                  <FaTrashAlt
+                    color="#e53e3e"
+                    size={18}
+                    style={{
+                      opacity: deletingId === report.id ? 0.5 : 1,
+                      pointerEvents: deletingId === report.id ? "none" : "auto",
+                    }}
+                  />
                 </span>
               </div>
               <div className={styles.reportOutput}>
@@ -72,6 +109,48 @@ export default function MyReports() {
         </div>
         {!loading && reports.length === 0 && <div>No reports found.</div>}
       </div>
+
+      {/* Modal de confirmación bonito */}
+      {confirmDelete && (
+        <div className={styles.confirmModalOverlay}>
+          <div className={styles.confirmModal}>
+            <h3>Delete Report</h3>
+            <p>
+              Are you sure you want to delete this report,
+              <span style={{ fontWeight: "bold", color: "#2b6cb0" }}>
+                {" "}
+                {user?.name} {user?.surname}
+              </span>
+              ?
+            </p>
+            <p
+              style={{
+                fontSize: "0.95rem",
+                color: "#666",
+                marginBottom: "1rem",
+              }}
+            >
+              <strong>Command:</strong> {confirmDelete.command}
+            </p>
+            <div className={styles.confirmModalButtons}>
+              <button
+                className={styles.cancelButton}
+                onClick={() => setConfirmDelete(null)}
+                disabled={deletingId === confirmDelete.id}
+              >
+                Cancel
+              </button>
+              <button
+                className={styles.deleteButton}
+                onClick={() => handleDelete(confirmDelete)}
+                disabled={deletingId === confirmDelete.id}
+              >
+                {deletingId === confirmDelete.id ? "Deleting..." : "Delete"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Modal de detalle */}
       {selectedReport && (
