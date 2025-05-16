@@ -1,24 +1,38 @@
 import { useState } from "react";
+import { UserService } from "../../api/userService";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { Link } from "react-router-dom";
 import styles from "./Register.module.css";
 
 export default function Register() {
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [pronouns, setPronouns] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [form, setForm] = useState({
+    username: "greSaRe",
+    name: "Grecia",
+    surname: "Sanchez",
+    pronouns: "Ella/She",
+    email: "grelsare13@gmail.com",
+    password: "Password123!",
+  });
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Name:", name);
-    console.log("Surname:", surname);
-    console.log("Pronouns:", pronouns);
-    console.log("Email:", email);
-    console.log("Password:", password);
-    // Here you can handle registration, such as calling an API
+    setError("");
+    setSuccess("");
+    try {
+      await UserService.register(form);
+      setSuccess("User registered successfully!");
+      // Opcional: limpiar formulario o redirigir
+      // setForm({ username: "", name: "", surname: "", pronouns: "", email: "", password: "" });
+    } catch (err) {
+      setError(err.message || "Registration failed.");
+    }
   };
 
   return (
@@ -28,12 +42,25 @@ export default function Register() {
         <form onSubmit={handleSubmit} className={styles.form}>
           <h1 className={styles.title}>Register</h1>
           <div className={styles.formGroup}>
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={form.username}
+              onChange={handleChange}
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+          <div className={styles.formGroup}>
             <label htmlFor="name">Name</label>
             <input
               type="text"
               id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              name="name"
+              value={form.name}
+              onChange={handleChange}
               placeholder="Enter your name"
               required
             />
@@ -43,8 +70,9 @@ export default function Register() {
             <input
               type="text"
               id="surname"
-              value={surname}
-              onChange={(e) => setSurname(e.target.value)}
+              name="surname"
+              value={form.surname}
+              onChange={handleChange}
               placeholder="Enter your surname"
               required
             />
@@ -54,8 +82,9 @@ export default function Register() {
             <input
               type="text"
               id="pronouns"
-              value={pronouns}
-              onChange={(e) => setPronouns(e.target.value)}
+              name="pronouns"
+              value={form.pronouns}
+              onChange={handleChange}
               placeholder="e.g. she/her, he/him, they/them"
               required
             />
@@ -65,8 +94,9 @@ export default function Register() {
             <input
               type="email"
               id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              value={form.email}
+              onChange={handleChange}
               placeholder="Enter your email"
               required
             />
@@ -76,8 +106,9 @@ export default function Register() {
             <input
               type="password"
               id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={form.password}
+              onChange={handleChange}
               placeholder="Enter your password"
               required
             />
@@ -85,6 +116,14 @@ export default function Register() {
           <button type="submit" className={styles.submitButton}>
             Register
           </button>
+          {error && (
+            <div style={{ color: "red", gridColumn: "1 / -1" }}>{error}</div>
+          )}
+          {success && (
+            <div style={{ color: "green", gridColumn: "1 / -1" }}>
+              {success}
+            </div>
+          )}
           <div className={styles.register}>
             <span>Already have an account?</span>
             <Link to="/log-in" className={styles.registerLink}>
