@@ -1,10 +1,21 @@
-import { Link } from "react-router-dom"; // Importa Link de react-router-dom
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import Logo from "../logo/Logo";
 import Button from "../button/Button";
 import Navbar from "../navbar/Navbar";
+import { useAuth } from "../../hooks/useAuth";
+import { AuthService } from "../../api/authService";
 
 export default function Header() {
+  const isAuthenticated = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    AuthService.logout();
+    navigate("/log-in");
+    window.location.reload(); // Esto asegura que todo el estado se reinicie
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -14,9 +25,12 @@ export default function Header() {
         <Navbar />
       </nav>
       <div className={styles.buttons}>
-        <Link to="/log-in">
-          <Button label="Log In" />
-        </Link>
+        {!isAuthenticated && (
+          <Link to="/log-in">
+            <Button label="Log In" />
+          </Link>
+        )}
+        {isAuthenticated && <Button label="Log Out" onClick={handleLogout} />}
       </div>
     </header>
   );

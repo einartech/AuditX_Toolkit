@@ -1,18 +1,28 @@
 import { useState } from "react";
+import { AuthService } from "../../api/authService";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./LogIn.module.css";
 
 export default function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-    // Here you can handle form submission, such as calling an API
+    setError("");
+    setSuccess("");
+    try {
+      await AuthService.login({ email, password });
+      setSuccess("Login successful!");
+      navigate("/audit-x-toolkit"); // ← Ruta correcta según tu router
+    } catch (err) {
+      setError(err.response?.data?.message || "Login failed.");
+    }
   };
 
   return (
@@ -46,6 +56,14 @@ export default function LogIn() {
           <button type="submit" className={styles.submitButton}>
             Sign In
           </button>
+          {error && (
+            <div style={{ color: "red", gridColumn: "1 / -1" }}>{error}</div>
+          )}
+          {success && (
+            <div style={{ color: "green", gridColumn: "1 / -1" }}>
+              {success}
+            </div>
+          )}
           <div className={styles.register}>
             <span>Don't have an account?</span>
             <Link to="/register" className={styles.registerLink}>
