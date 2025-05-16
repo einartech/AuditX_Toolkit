@@ -4,6 +4,9 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Content from "../../components/content/Content";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import NmapComponent from "../../components/auditxToolkitComponents/NmapComponent";
+import FuzzingComponent from "../../components/auditxToolkitComponents/FuzzingComponent";
+import JwtComponent from "../../components/auditxToolkitComponents/JwtComponent";
 
 export default function AuditxToolkit() {
   const [activeContent, setActiveContent] = useState("nmap");
@@ -13,26 +16,19 @@ export default function AuditxToolkit() {
       case "nmap":
         return (
           <Content title="Nmap">
-            <p>
-              Nmap is a powerful network scanning tool. Add your content here.
-            </p>
+            <NmapComponent />
           </Content>
         );
       case "fuzzing":
         return (
           <Content title="Fuzzing">
-            <p>
-              Fuzzing is a technique for finding vulnerabilities in software.
-            </p>
+            <FuzzingComponent />
           </Content>
         );
       case "jwt":
         return (
           <Content title="JWT">
-            <p>
-              JWT (JSON Web Token) is a compact, URL-safe means of representing
-              claims.
-            </p>
+            <JwtComponent />
           </Content>
         );
       default:
