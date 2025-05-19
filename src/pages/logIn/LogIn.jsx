@@ -6,8 +6,8 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./LogIn.module.css";
 
 export default function LogIn() {
-  const [email, setEmail] = useState("john.doe@example.com");
-  const [password, setPassword] = useState("Password123!");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();

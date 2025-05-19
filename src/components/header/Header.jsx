@@ -27,11 +27,7 @@ export default function Header() {
         <Navbar />
       </nav>
       <div className={styles.userInfo}>
-        {isAuthenticated && user && (
-          <span>
-            {user.name} {user.surname} ({user.pronouns})
-          </span>
-        )}
+        {isAuthenticated && user && <span>{user.username}</span>}
       </div>
       <div className={styles.buttons}>
         {!isAuthenticated && (

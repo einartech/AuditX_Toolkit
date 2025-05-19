@@ -18,6 +18,7 @@
 /* Tablets */
 @media (max-width: 1024px) {
     .main {
+        flex-direction: column;
         margin-top: 140px;
         margin-bottom: 100px;
         min-height: calc(100vh - 240px);

@@ -4,8 +4,8 @@ import { useUser } from "../../hooks/useUser";
 import styles from "./NmapComponent.module.css";
 
 export default function NmapComponent() {
-  const [target, setTarget] = useState("scanme.nmap.org");
-  const [flags, setFlags] = useState("-A");
+  const [target, setTarget] = useState("");
+  const [flags, setFlags] = useState("");
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -30,7 +30,7 @@ export default function NmapComponent() {
   };
 
   const handleSaveReport = async () => {
-    if (!user?.id || !result) return;
+    if (!user?.id || !result || saving) return; // <-- evita múltiples envíos
     setSaving(true);
     setSaveMsg("");
     try {
