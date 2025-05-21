@@ -1,0 +1,87 @@
+.reportModalOverlay {
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(30, 41, 59, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reportModal {
+    background: var(--background-secondary, #fff);
+    border-radius: 12px;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.18);
+    max-width: 1000px;
+    width: 98vw;
+    max-height: 96vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.reportModalContent {
+    padding: 2rem 1.5rem 1rem 1.5rem;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: var(--primary-color, #2b6cb0);
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s;
+}
+
+.closeButton:hover {
+    color: var(--danger-color, #e53e3e);
+}
+
+.reportModalContent .reportOutput {
+    max-height: 60vh;
+    min-height: 200px;
+    overflow: auto;
+    background: var(--background-result, #f7fafc);
+    color: var(--text-black, #000);
+    border-radius: 6px;
+    padding: 0.7rem;
+    margin-bottom: 0.7rem;
+    font-family: "Fira Mono", "Consolas", monospace;
+    font-size: clamp(0.8rem, 1vw, 1.1rem);
+    white-space: pre-wrap;
+    word-break: break-all;
+    line-height: 1.4;
+}
+
+.reportModalContent .reportOutput pre {
+    font-size: inherit;
+    font-family: inherit;
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    line-height: inherit;
+}
+
+@media (max-width: 700px) {
+    .reportModal {
+        max-width: 99vw;
+        padding: 0;
+    }
+
+    .reportModalContent {
+        padding: 1rem 0.5rem 0.5rem 0.5rem;
+    }
+
+    .reportModalContent .reportOutput {
+        max-height: 40vh;
+        font-size: 0.9rem;
+    }
+}

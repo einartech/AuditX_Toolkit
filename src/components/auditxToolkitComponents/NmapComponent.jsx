@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NmapService } from "../../api/nmapService";
 import { useUser } from "../../hooks/useUser";
 import styles from "./NmapComponent.module.css";
+import Button from "../../components/button/Button"; // Ajusta la ruta si es necesario
 
 export default function NmapComponent() {
   const [target, setTarget] = useState("");
@@ -87,28 +88,6 @@ export default function NmapComponent() {
               ? result
               : JSON.stringify(result, null, 2)}
           </pre>
-          <div className={styles.buttonRow}>
-            <button
-              className={styles.discardButton}
-              onClick={() => {
-                setResult(null);
-                setSaveMsg("");
-                setError("");
-              }}
-              disabled={saving}
-              type="button"
-            >
-              Descartar Reporte
-            </button>
-            <button
-              className={styles.saveButton}
-              onClick={handleSaveReport}
-              disabled={saving}
-              type="button"
-            >
-              {saving ? "Saving..." : "Guardar Reporte Nmap"}
-            </button>
-          </div>
           {saveMsg && (
             <div
               className={
@@ -120,6 +99,29 @@ export default function NmapComponent() {
               {saveMsg}
             </div>
           )}
+        </div>
+      )}
+
+      {result && (
+        <div className={styles.buttonRow} style={{ marginTop: "2rem" }}>
+          <Button
+            className={styles.discardButton}
+            onClick={() => {
+              setResult(null);
+              setSaveMsg("");
+              setError("");
+            }}
+            disabled={saving}
+            type="button"
+            label="Descartar Reporte"
+          />
+          <Button
+            className={styles.saveButton}
+            onClick={handleSaveReport}
+            disabled={saving}
+            type="button"
+            label={saving ? "Saving..." : "Guardar Reporte Nmap"}
+          />
         </div>
       )}
     </div>

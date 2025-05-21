@@ -1,0 +1,67 @@
+.reportCard {
+    background: var(--background-secondary, #fff);
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.reportHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+}
+
+.reportCommand {
+    color: var(--primary-color, #2b6cb0);
+    font-size: 1rem;
+    word-break: break-all;
+}
+
+.reportDate {
+    color: var(--text-secondary, #888);
+    font-size: 0.95rem;
+}
+
+.trashIcon {
+    display: flex;
+    align-items: center;
+    margin-left: 0.7rem;
+    transition: opacity 0.2s;
+}
+
+.trashIcon:hover svg {
+    color: var(--danger-color, #c53030);
+    opacity: 0.8;
+}
+
+.reportOutput {
+    background: var(--background-result, #f7fafc);
+    border-radius: 6px;
+    padding: 0.7rem;
+    margin-bottom: 0.7rem;
+    max-height: 180px;
+    overflow: auto;
+    font-family: "Fira Mono", "Consolas", monospace;
+    font-size: 0.95rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+    color: var(--text-black, #000);
+}
+
+.reportFooter {
+    color: var(--text-primary, #444);
+    font-size: 0.95rem;
+    margin-top: auto;
+}
+
+@media (max-width: 600px) {
+    .reportOutput {
+        max-height: 100px;
+        font-size: 0.9rem;
+    }
+}
