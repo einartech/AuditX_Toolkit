@@ -30,7 +30,7 @@ export default function Header() {
         {isAuthenticated && user && (
           <span
             className={styles.userLink}
-            onClick={() => navigate("/profile/edit")}
+            onClick={() => navigate("/profile-edit")}
             title="Edit your profile"
             tabIndex={0}
             role="button"

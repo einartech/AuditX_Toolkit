@@ -51,7 +51,6 @@ export default function NmapComponent() {
 
   return (
     <div className={styles.nmapContainer}>
-      <h2>Nmap</h2>
       <form className={styles.nmapForm} onSubmit={handleSubmit}>
         <div>
           <label>
@@ -75,9 +74,11 @@ export default function NmapComponent() {
             />
           </label>
         </div>
-        <button type="submit" disabled={loading}>
-          {loading ? "Scanning..." : "Run Nmap Scan"}
-        </button>
+        <Button
+          type="submit"
+          disabled={loading}
+          label={loading ? "Scanning..." : "Run Nmap Scan"}
+        />
       </form>
       {error && <div style={{ color: "red" }}>{error}</div>}
       {result && (
