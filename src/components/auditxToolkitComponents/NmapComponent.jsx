@@ -82,12 +82,25 @@ export default function NmapComponent() {
       {error && <div style={{ color: "red" }}>{error}</div>}
       {result && (
         <div className={styles.resultContainer}>
-          <h3>Scan Result:</h3>
-          <pre className={styles.resultPre}>
-            {typeof result === "string"
-              ? result
-              : JSON.stringify(result, null, 2)}
-          </pre>
+          <h3>Scan Result</h3>
+          <div className={styles.resultField}>
+            <strong>Command:</strong>
+            <span className={styles.resultCommand}>
+              {result.command || `nmap ${flags} ${target}`}
+            </span>
+          </div>
+          <div className={styles.resultField}>
+            <strong>Output:</strong>
+            <pre className={styles.resultPre}>
+              {result.output || (typeof result === "string" ? result : "")}
+            </pre>
+          </div>
+          <div className={styles.resultField}>
+            <strong>Exit Code:</strong>
+            <span className={styles.resultExitCode}>
+              {result.exitCode !== undefined ? result.exitCode : "N/A"}
+            </span>
+          </div>
           {saveMsg && (
             <div
               className={

@@ -67,6 +67,15 @@
     margin: 0 0 1.5rem 0;
     font-size: clamp(0.8rem, 1vw, 1.1rem);
     line-height: 1.4;
+    max-height: 160px;
+    /* Limita la altura del output */
+    overflow-y: auto;
+    /* Scroll solo en el output */
+    background: rgba(0, 0, 0, 0.18);
+    border-radius: 4px;
+    padding: 0.5rem;
+    white-space: pre-wrap;
+    word-break: break-all;
 }
 
 .buttonRow {
@@ -130,6 +139,11 @@
         max-height: 200px;
         font-size: 0.9rem;
     }
+
+    .resultPre {
+        max-height: 100px;
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 500px) {
@@ -143,10 +157,33 @@
         font-size: 0.85rem;
     }
 
+    .resultPre {
+        max-height: 60px;
+        font-size: 0.85rem;
+    }
+
     .saveButton {
         bottom: 0.7rem;
         right: 0.7rem;
         font-size: 0.95rem;
         padding: 0.5rem 1rem;
     }
+}
+
+.resultField {
+    margin-bottom: 1rem;
+}
+
+.resultCommand {
+    display: block;
+    color: var(--primary-color, #00ffe7);
+    margin-top: 0.3rem;
+    font-family: "Fira Mono", "Consolas", monospace;
+    word-break: break-all;
+}
+
+.resultExitCode {
+    color: var(--success-color, #00ff88);
+    margin-left: 0.5rem;
+    font-weight: bold;
 }

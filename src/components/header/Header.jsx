@@ -27,7 +27,20 @@ export default function Header() {
         <Navbar />
       </nav>
       <div className={styles.userInfo}>
-        {isAuthenticated && user && <span>{user.username}</span>}
+        {isAuthenticated && user && (
+          <span
+            className={styles.userLink}
+            onClick={() => navigate("/profile/edit")}
+            title="Edit your profile"
+            tabIndex={0}
+            role="button"
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") navigate("/profile-edit");
+            }}
+          >
+            {user.username}
+          </span>
+        )}
       </div>
       <div className={styles.buttons}>
         {!isAuthenticated && (

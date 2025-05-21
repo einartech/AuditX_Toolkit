@@ -6,6 +6,7 @@ import About from "../../pages/about/About";
 import AuditxToolkit from "../../pages/auditxToolkit/auditxToolkit";
 import Login from "../../pages/logIn/LogIn";
 import Register from "../../pages/register/Register";
+import EditProfile from "../../pages/editProfile/EditProfile";
 export default function Router() {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ export default function Router() {
         <Route path="/log-in" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/audit-x-toolkit" element={<AuditxToolkit />} />
+        <Route path="/profile-edit" element={<EditProfile />} />
       </Routes>
     </BrowserRouter>
   );
