@@ -1,11 +1,23 @@
+.editProfileMain {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 220px;
+    margin-bottom: 40px;
+}
+
 .editProfileContainer {
+    width: 100%;
     max-width: 420px;
-    margin: 70px auto 0 auto;
-    background: var(--background-secondary, #181c1f);
+    background: var(--secondary-color, #1a1a1a);
+    /* Igual que login/register */
     color: var(--quinary-color, #fff);
     border-radius: 12px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.13);
     padding: 2rem 1.5rem;
+    margin: 0 auto;
 }
 
 .editProfileForm {
@@ -19,15 +31,23 @@
     flex-direction: column;
     font-weight: 500;
     gap: 0.3rem;
+    color: var(--quinary-color, #fff);
 }
 
 .editProfileForm input {
     padding: 0.6rem;
     border-radius: 6px;
-    border: 1px solid #333c45;
+    border: 1px solid var(--cuaternary-color, #00eaff);
     background: #23272e;
-    color: #fff;
+    color: var(--quinary-color, #fff);
     font-size: 1rem;
+    transition: border 0.2s;
+}
+
+.editProfileForm input:focus {
+    border: 1.5px solid var(--primary-color, #295458);
+    outline: none;
+    background: #222b2f;
 }
 
 .buttonRow {
@@ -38,21 +58,62 @@
 
 .msg {
     margin-top: 1rem;
-    color: var(--primary-color, #00ffe7);
+    color: var(--success-color, #00ff88);
     font-weight: 600;
     text-align: center;
 }
 
 .userLink {
-    color: var(--primary-color, #00ffe7);
+    color: var(--primary-color, #295458);
     cursor: pointer;
-    text-decoration: underline;
     font-weight: 600;
-    transition: color 0.2s;
+    border-radius: 16px;
+    padding: 0.25rem 0.9rem;
+    background: var(--tertiary-color, #00eaff74);
+    box-shadow: 0 2px 8px rgba(0, 234, 255, 0.07);
+    display: inline-block;
+    transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    outline: none;
 }
 
 .userLink:hover,
 .userLink:focus {
     color: var(--success-color, #00ff88);
-    outline: none;
+    background: var(--cuaternary-color, #00eaff);
+    box-shadow: 0 4px 16px rgba(0, 234, 255, 0.13);
+    text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+    .editProfileMain {
+        margin-top: 250px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+    .editProfileMain {
+        margin-top: 260px;
+        margin-bottom: 20px;
+    }
+
+    .editProfileContainer {
+        padding: 1.2rem 0.5rem;
+        border-radius: 8px;
+        font-size: 0.98rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .editProfileMain {
+        margin-top: 240px;
+        margin-bottom: 10px;
+    }
+
+    .editProfileContainer {
+        padding: 0.7rem 0.1rem;
+        border-radius: 5px;
+        font-size: 0.93rem;
+    }
 }

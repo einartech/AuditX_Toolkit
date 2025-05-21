@@ -11,6 +11,7 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<About />} />
         <Route path="/my-reports" element={<Reports />} />
         <Route path="/about" element={<About />} />
         <Route path="/log-in" element={<Login />} />
