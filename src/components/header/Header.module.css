@@ -37,6 +37,25 @@
     /* Permite que los enlaces se ajusten en pantallas pequeñas */
 }
 
+.navbar a,
+.navbar .nav-link {
+    color: var(--quinary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 500;
+    padding: 0.2rem 0.7rem;
+    border-radius: 3px;
+}
+
+.navbar a:hover,
+.navbar .nav-link:hover,
+.navbar a.active,
+.navbar .nav-link.active {
+    color: var(--cuaternary-color);
+    /* Turquesa fuerte, igual que el botón Log Out */
+
+}
+
 .buttons {
     flex: 1;
     display: flex;

@@ -5,13 +5,13 @@
 }
 
 :root {
-    --primary-color: #012124;
+    --primary-color: #295458;
     /* Cian neón (color de acento hacking) */
     --secondary-color: #1a1a1a;
     /* Gris oscuro */
     --tertiary-color: #00eaff74;
     /* Gris intermedio oscuro */
-    --cuaternary-color: #333c45;
+    --cuaternary-color: #00eaff;
     /* Gris intermedio claro */
     --quinary-color: #ffffff;
     /* Blanco puro */

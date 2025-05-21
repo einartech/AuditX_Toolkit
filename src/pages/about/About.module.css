@@ -1,10 +1,10 @@
 .aboutMain {
     max-width: 900px;
-    margin: 60px auto 0 auto;
-    /* Aumenta el margin-top a 60px */
+    margin: 320px auto 60px auto;
+    /* Espacio arriba y abajo para separar del header y del footer */
     padding: 2.5rem 2rem;
-    background: var(--background-secondary, #181c1f);
-    color: var(--quinary-color, #fff);
+    background: var(--secondary-color);
+    color: var(--quinary-color);
     border-radius: 16px;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10);
     font-size: 1.08rem;
@@ -15,7 +15,8 @@
 .aboutMain h1,
 .aboutMain h2,
 .aboutMain h3 {
-    color: var(--primary-color, #00ffe7);
+    color: var(--cuaternary-color);
+    /* Cian neón de acento */
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-weight: 700;
@@ -42,7 +43,9 @@
 
 .aboutMain pre {
     background: #222;
-    color: #00ffe7;
+    /* No hay variable global para esto, puedes agregar si quieres */
+    color: var(--cuaternary-color);
+    /* Usa el cian neón para resaltar */
     padding: 1rem 1rem 1rem 0.7rem;
     border-radius: 8px;
     font-family: "Fira Mono", "Consolas", monospace;
@@ -51,11 +54,10 @@
     overflow-x: auto;
     white-space: pre-wrap;
     word-break: break-all;
-
 }
 
 .aboutMain strong {
-    color: var(--primary-color, #00ffe7);
+    color: var(--cuaternary-color);
 }
 
 @media (max-width: 1100px) {
@@ -64,8 +66,8 @@
         padding: 1.5rem 1rem;
         border-radius: 12px;
         font-size: 1rem;
-        margin-top: 50px;
-        /* También aumenta el margin-top en tablet */
+        margin: 200px auto 60px auto;
+        /* Espacio arriba y abajo en tablet */
     }
 
     .aboutMain h1 {
@@ -78,8 +80,8 @@
         padding: 1rem 0.5rem;
         border-radius: 8px;
         font-size: 0.98rem;
-        margin-top: 40px;
-        /* Más espacio en móvil */
+        margin: 300px auto 20px auto;
+        /* Espacio arriba y abajo en mobile */
     }
 
     .aboutMain h1 {
@@ -103,8 +105,8 @@
         padding: 0.5rem 0.1rem;
         border-radius: 5px;
         font-size: 0.93rem;
-        margin-top: 30px;
-        /* Espacio extra en móviles pequeños */
+        margin: 480px auto 90px auto;
+        /* Espacio arriba y abajo en móviles pequeños */
     }
 
     .aboutMain h1 {
