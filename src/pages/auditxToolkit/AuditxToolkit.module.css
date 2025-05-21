@@ -38,3 +38,17 @@
         gap: 0.5rem;
     }
 }
+
+/* Desktop: más ancho y centrado */
+@media (min-width: 1025px) {
+
+    .main,
+    .content,
+    ._content_1vxcb_1 {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+}

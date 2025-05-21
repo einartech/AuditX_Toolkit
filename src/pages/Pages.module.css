@@ -5,16 +5,22 @@
 }
 
 :root {
-    --primary-color: #000000;
-    /* Negro puro */
+    --primary-color: #012124;
+    /* Cian neón (color de acento hacking) */
     --secondary-color: #1a1a1a;
     /* Gris oscuro */
-    --tertiary-color: #333333;
-    /* Gris intermedio */
-    --cuaternary-color: #f2f2f2;
-    /* Gris claro */
+    --tertiary-color: #23272e;
+    /* Gris intermedio oscuro */
+    --cuaternary-color: #333c45;
+    /* Gris intermedio claro */
     --quinary-color: #ffffff;
     /* Blanco puro */
+    --danger-color: #e53e3e;
+    /* Rojo para errores/botones críticos */
+    --success-color: #00ff88;
+    /* Verde neón para éxito */
+    --warning-color: #ffb300;
+    /* Amarillo para advertencias */
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
