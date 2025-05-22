@@ -17,7 +17,7 @@
     color: var(--quinary-color, #fff);
     border-radius: 14px;
     box-shadow: 0 4px 32px rgba(0, 0, 0, 0.18);
-    margin: 60px 0 40px 0;
+    margin: 160px 0 140px 0;
     min-width: 320px;
     max-width: 700px;
     width: 95vw;
@@ -65,7 +65,7 @@
 
 .reportCommand {
     background: #181c1f;
-    color: var(--cuaternary-color, #00eaff);
+    color: var(--primary-color, #00eaff);
     padding: 0.7rem 1rem;
     border-radius: 8px;
     font-family: "Fira Mono", "Consolas", monospace;
@@ -75,7 +75,7 @@
 }
 
 .commandCode {
-    color: var(--cuaternary-color, #00eaff);
+    color: var(--primary-color, #00eaff);
     font-weight: 600;
     font-size: 1.05rem;
 }
@@ -90,7 +90,7 @@
     border-collapse: collapse;
     font-family: "Fira Mono", "Consolas", monospace;
     font-size: 1rem;
-    background: #181c1f;
+    background: var(--quinary-color);
 }
 
 .outputTable th,
@@ -110,7 +110,7 @@
 }
 
 .outputPre {
-    background: #181c1f;
+    background: #0b2e49;
     color: var(--quinary-color, #fff);
     padding: 1rem;
     border-radius: 8px;
