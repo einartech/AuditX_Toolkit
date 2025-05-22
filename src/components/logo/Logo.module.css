@@ -6,10 +6,7 @@
 
 .logoImage {
     width: 70px;
-    /* Tamaño estándar del logo */
     height: auto;
-    /* Mantiene la proporción de la imagen */
     max-width: 100%;
-    /* Asegura que no se desborde en contenedores pequeños */
     color: var(--primary-color);
 }

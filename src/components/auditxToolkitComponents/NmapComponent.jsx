@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NmapService } from "../../api/nmapService";
 import { useUser } from "../../hooks/useUser";
 import styles from "./NmapComponent.module.css";
-import Button from "../../components/button/Button"; // Ajusta la ruta si es necesario
+import Button from "../../components/button/Button";
 
 export default function NmapComponent() {
   const [target, setTarget] = useState("");
@@ -31,7 +31,7 @@ export default function NmapComponent() {
   };
 
   const handleSaveReport = async () => {
-    if (!user?.id || !result || saving) return; // <-- evita múltiples envíos
+    if (!user?.id || !result || saving) return;
     setSaving(true);
     setSaveMsg("");
     try {
@@ -39,7 +39,7 @@ export default function NmapComponent() {
         command: `nmap ${flags} ${target}`,
         output:
           typeof result === "string" ? result : JSON.stringify(result, null, 2),
-        exitCode: 0, // Ajusta si tienes el exitCode real
+        exitCode: 0,
       });
       setSaveMsg("Report saved successfully!");
     } catch (err) {

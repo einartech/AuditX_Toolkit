@@ -12,7 +12,6 @@
     border-bottom: 1px solid var(--quinary-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap;
-    /* Permite que los elementos se ajusten automáticamente */
 }
 
 .logo {
@@ -34,7 +33,6 @@
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
-    /* Permite que los enlaces se ajusten en pantallas pequeñas */
 }
 
 .navbar a,
@@ -52,7 +50,6 @@
 .navbar a.active,
 .navbar .nav-link.active {
     color: var(--cuaternary-color);
-    /* Turquesa fuerte, igual que el botón Log Out */
 
 }
 
@@ -62,7 +59,6 @@
     justify-content: flex-end;
     gap: 0.5rem;
     flex-wrap: wrap;
-    /* Permite que los botones se ajusten en pantallas pequeñas */
 }
 
 .buttons button {
@@ -89,7 +85,6 @@
     .navbar {
         justify-content: flex-start;
         gap: 0.5rem;
-        /* Reduce el espacio entre los enlaces */
     }
 
     .buttons {
@@ -99,7 +94,6 @@
 
     .buttons button {
         padding: 0.4rem 0.8rem;
-        /* Reduce el tamaño de los botones */
         font-size: 0.9rem;
     }
 }
@@ -107,19 +101,16 @@
 @media (max-width: 768px) {
     .navbar {
         justify-content: center;
-        /* Centra el navbar en pantallas pequeñas */
         gap: 0.5rem;
     }
 
     .buttons {
         justify-content: center;
-        /* Centra los botones en pantallas pequeñas */
         gap: 0.5rem;
     }
 
     .buttons button {
         padding: 0.3rem 0.6rem;
-        /* Reduce aún más el tamaño de los botones */
         font-size: 0.8rem;
     }
 }

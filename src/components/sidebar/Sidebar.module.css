@@ -6,7 +6,6 @@
 
 .button {
     position: relative;
-    /* Necesario para posicionar el tooltip */
     padding: 1rem;
     font-size: 1rem;
     background-color: var(--tertiary-color);
@@ -21,25 +20,18 @@
     background-color: var(--cuaternary-color);
 }
 
-/* Tooltip styles */
 .button::after {
     color: var(--quinary-color);
     content: attr(data-tooltip);
-    /* Usa el atributo data-tooltip como contenido */
     position: absolute;
     top: 50%;
-    /* Centra el tooltip verticalmente */
     left: 110%;
-    /* Posiciona el tooltip al lado derecho del botón */
     transform: translateY(-50%);
-    /* Ajusta el centro vertical */
     background-color: var(--secondary-color);
     color: var(--quinary-color);
     padding: 1rem;
-    /* Aumenta el tamaño del padding para hacerlo más grande */
     border-radius: 4px;
     font-size: 1rem;
-    /* Aumenta el tamaño de la fuente */
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;

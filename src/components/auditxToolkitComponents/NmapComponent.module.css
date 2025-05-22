@@ -73,9 +73,7 @@
     font-size: clamp(0.8rem, 1vw, 1.1rem);
     line-height: 1.4;
     max-height: 160px;
-    /* Limita la altura del output */
     overflow-y: auto;
-    /* Scroll solo en el output */
     background: rgba(0, 0, 0, 0.18);
     border-radius: 4px;
     padding: 0.5rem;
@@ -115,7 +113,6 @@
 .saveButton:hover:not(:disabled),
 .discardButton:hover:not(:disabled) {
     color: var(--tertiary-color, #00eaff);
-    /* Lila */
     background: var(--secondary-color);
 }
 

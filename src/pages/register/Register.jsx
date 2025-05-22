@@ -7,12 +7,12 @@ import styles from "./Register.module.css";
 
 export default function Register() {
   const [form, setForm] = useState({
-    username: "greSaRe",
-    name: "Grecia",
-    surname: "Sanchez",
-    pronouns: "Ella/She",
-    email: "grelsare13@gmail.com",
-    password: "Password123!",
+    username: "",
+    name: "",
+    surname: "",
+    pronouns: "",
+    email: "",
+    password: "",
   });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -28,8 +28,6 @@ export default function Register() {
     try {
       await UserService.register(form);
       setSuccess("User registered successfully!");
-      // Opcional: limpiar formulario o redirigir
-      // setForm({ username: "", name: "", surname: "", pronouns: "", email: "", password: "" });
     } catch (err) {
       setError(err.message || "Registration failed.");
     }

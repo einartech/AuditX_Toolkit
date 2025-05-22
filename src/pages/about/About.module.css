@@ -1,7 +1,6 @@
 .aboutMain {
     max-width: 900px;
     margin: 320px auto 60px auto;
-    /* Espacio arriba y abajo para separar del header y del footer */
     padding: 2.5rem 2rem;
     background: var(--secondary-color);
     color: var(--quinary-color);
@@ -16,7 +15,6 @@
 .aboutMain h2,
 .aboutMain h3 {
     color: var(--cuaternary-color);
-    /* Cian neón de acento */
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-weight: 700;
@@ -43,9 +41,7 @@
 
 .aboutMain pre {
     background: #222;
-    /* No hay variable global para esto, puedes agregar si quieres */
     color: var(--cuaternary-color);
-    /* Usa el cian neón para resaltar */
     padding: 1rem 1rem 1rem 0.7rem;
     border-radius: 8px;
     font-family: "Fira Mono", "Consolas", monospace;
@@ -67,7 +63,6 @@
         border-radius: 12px;
         font-size: 1rem;
         margin: 200px auto 60px auto;
-        /* Espacio arriba y abajo en tablet */
     }
 
     .aboutMain h1 {
@@ -81,7 +76,6 @@
         border-radius: 8px;
         font-size: 0.98rem;
         margin: 300px auto 20px auto;
-        /* Espacio arriba y abajo en mobile */
     }
 
     .aboutMain h1 {
@@ -106,7 +100,6 @@
         border-radius: 5px;
         font-size: 0.93rem;
         margin: 480px auto 90px auto;
-        /* Espacio arriba y abajo en móviles pequeños */
     }
 
     .aboutMain h1 {

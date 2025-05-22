@@ -19,7 +19,7 @@ export default function LogIn() {
     try {
       await AuthService.login({ email, password });
       setSuccess("Login successful!");
-      navigate("/audit-x-toolkit"); // ← Ruta correcta según tu router
+      navigate("/audit-x-toolkit");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed.");
     }

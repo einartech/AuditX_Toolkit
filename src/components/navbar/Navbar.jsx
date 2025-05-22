@@ -12,7 +12,6 @@ export default function Navbar() {
         <>
           <NavLink to="/audit-x-toolkit" label="Audit X Toolkit" />
           <NavLink to="/my-reports" label="My Reports" />
-          {/* Puedes añadir más enlaces aquí */}
         </>
       )}
     </ul>

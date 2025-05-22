@@ -19,7 +19,6 @@ export default function EditProfile() {
   const [msg, setMsg] = useState("");
   const [saving, setSaving] = useState(false);
 
-  // Siempre enviamos todos los campos requeridos por el backend, excepto password si está vacío
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -29,7 +28,6 @@ export default function EditProfile() {
     setSaving(true);
     setMsg("");
     try {
-      // Clonamos el form y eliminamos password si está vacío
       const dataToSend = { ...form };
       if (!dataToSend.password) {
         delete dataToSend.password;

@@ -15,7 +15,7 @@ export default function Header() {
   const handleLogout = () => {
     AuthService.logout();
     navigate("/log-in");
-    window.location.reload(); // Esto asegura que todo el estado se reinicie
+    window.location.reload();
   };
 
   return (

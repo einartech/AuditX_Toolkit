@@ -4,20 +4,16 @@
     gap: 1rem;
     padding: 1rem;
     margin-top: 120px;
-    /* Más espacio debajo del Header */
     margin-bottom: 100px;
-    /* Espacio encima del Footer */
     background-color: var(--secondary-color);
     color: var(--quinary-color);
     min-height: calc(100vh - 220px);
-    /* Ajusta según el tamaño del Header y Footer */
     width: 100%;
     box-sizing: border-box;
 }
 
 
 
-/* Tablets */
 @media (max-width: 1024px) {
     .main {
         flex-direction: column;
@@ -29,7 +25,6 @@
     }
 }
 
-/* Móviles */
 @media (max-width: 600px) {
     .main {
         flex-direction: column;
@@ -41,7 +36,6 @@
     }
 }
 
-/* Desktop: más ancho y centrado */
 @media (min-width: 1025px) {
 
     .main,
