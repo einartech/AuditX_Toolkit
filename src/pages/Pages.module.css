@@ -72,7 +72,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--cuaternary-color);
+    background-color: var(--primary-color);
     /* Fondo gris claro */
     color: var(--primary-color);
     /* Texto negro */
