@@ -2,22 +2,27 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    margin-top: 220px;
-    margin-bottom: 40px;
+    justify-content: center;
+    margin-top: 180px;
+    margin-bottom: 80px;
+    background: linear-gradient(135deg, var(--secondary-color) 60%, var(--primary-color) 100%);
+    color: var(--quinary-color);
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .editProfileContainer {
     width: 100%;
     max-width: 420px;
     background: var(--secondary-color, #1a1a1a);
-    /* Igual que login/register */
     color: var(--quinary-color, #fff);
-    border-radius: 12px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.13);
-    padding: 2rem 1.5rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+    padding: 2.5rem 2rem;
     margin: 0 auto;
+    backdrop-filter: blur(2px);
+    box-sizing: border-box;
 }
 
 .editProfileForm {
@@ -31,22 +36,31 @@
     flex-direction: column;
     font-weight: 500;
     gap: 0.3rem;
-    color: var(--quinary-color, #fff);
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
 }
 
-.editProfileForm input {
-    padding: 0.6rem;
+.editProfileForm input,
+.editProfileForm select,
+.editProfileForm textarea {
+    padding: 0.9rem;
     border-radius: 6px;
-    border: 1px solid var(--cuaternary-color, #00eaff);
+    border: 1.5px solid var(--tertiary-color);
     background: #23272e;
     color: var(--quinary-color, #fff);
     font-size: 1rem;
-    transition: border 0.2s;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.editProfileForm input:focus {
-    border: 1.5px solid var(--primary-color, #295458);
-    outline: none;
+.editProfileForm input:focus,
+.editProfileForm select:focus,
+.editProfileForm textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 6px var(--primary-color);
     background: #222b2f;
 }
 
@@ -54,6 +68,32 @@
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+}
+
+.buttonRow button {
+    padding: 0.95rem 1.5rem;
+    font-size: 1.1rem;
+    background: linear-gradient(90deg, var(--tertiary-color) 60%, var(--secondary-color) 100%);
+    color: var(--quinary-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: background 0.3s, color 0.2s, transform 0.2s;
+}
+
+.buttonRow button:hover:not(:disabled) {
+    background: linear-gradient(90deg, var(--primary-color) 60%, var(--tertiary-color) 100%);
+    color: var(--secondary-color);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.buttonRow button:disabled {
+    background: var(--secondary-color, #b2b2b2);
+    color: #888;
+    cursor: not-allowed;
 }
 
 .msg {
@@ -64,7 +104,7 @@
 }
 
 .userLink {
-    color: var(--primary-color, #295458);
+    color: var(--primary-color);
     cursor: pointer;
     font-weight: 600;
     border-radius: 16px;
@@ -85,22 +125,23 @@
     text-decoration: underline;
 }
 
+/* Responsive adjustments */
 @media (max-width: 1100px) {
     .editProfileMain {
-        margin-top: 250px;
+        margin-top: 90px;
         margin-bottom: 30px;
     }
 }
 
 @media (max-width: 700px) {
     .editProfileMain {
-        margin-top: 260px;
+        margin-top: 60px;
         margin-bottom: 20px;
     }
 
     .editProfileContainer {
         padding: 1.2rem 0.5rem;
-        border-radius: 8px;
+        border-radius: 12px;
         font-size: 0.98rem;
     }
 }
@@ -108,12 +149,12 @@
 @media (max-width: 480px) {
     .editProfileMain {
         margin-top: 240px;
-        margin-bottom: 10px;
+        margin-bottom: 80px;
     }
 
     .editProfileContainer {
         padding: 0.7rem 0.1rem;
-        border-radius: 5px;
+        border-radius: 8px;
         font-size: 0.93rem;
     }
 }

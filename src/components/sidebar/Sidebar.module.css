@@ -23,6 +23,7 @@
 
 /* Tooltip styles */
 .button::after {
+    color: var(--quinary-color);
     content: attr(data-tooltip);
     /* Usa el atributo data-tooltip como contenido */
     position: absolute;
@@ -32,7 +33,7 @@
     /* Posiciona el tooltip al lado derecho del botón */
     transform: translateY(-50%);
     /* Ajusta el centro vertical */
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--quinary-color);
     padding: 1rem;
     /* Aumenta el tamaño del padding para hacerlo más grande */

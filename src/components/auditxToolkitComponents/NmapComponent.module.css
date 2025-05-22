@@ -18,7 +18,7 @@
 
 .nmapForm label {
     font-weight: 500;
-    color: var(--primary-color, #222);
+    color: var(--secondary-color, #222);
     margin-bottom: 0.3rem;
 }
 
@@ -33,14 +33,19 @@
 
 .nmapForm button {
     padding: 0.6rem 1.2rem;
-    background: var(--primary-color, #2b6cb0);
-    color: #fff;
+    background: var(--secondary-color);
+    color: var(--quinary-color);
     border: none;
     border-radius: 6px;
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nmapForm button:hover:not(:disabled) {
+    background: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .nmapForm button:disabled {
@@ -96,7 +101,7 @@
 
 .saveButton {
     padding: 0.7rem 1.3rem;
-    background: #2b6cb0;
+    background: var(--secondary-color);
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -107,6 +112,13 @@
     transition: background 0.2s;
 }
 
+.saveButton:hover:not(:disabled),
+.discardButton:hover:not(:disabled) {
+    color: var(--tertiary-color, #00eaff);
+    /* Lila */
+    background: var(--secondary-color);
+}
+
 .saveButton:disabled {
     background: var(--secondary-color, #b2b2b2);
     cursor: not-allowed;
@@ -114,7 +126,7 @@
 
 .discardButton {
     padding: 0.7rem 1.3rem;
-    background: #e53e3e;
+    background: var(--secondary-color);
     color: #fff;
     border: none;
     border-radius: 6px;
